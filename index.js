@@ -1523,7 +1523,7 @@ function initializeModules(bot, mcData, defaultMove) {
             if (count <= 0 || !bot || typeof bot.setControlState !== "function")
               return;
             try {
-              bot.setControlState("sneak", false);
+              bot.setControlState("sneak", true);
               setTimeout(() => {
                 if (bot && typeof bot.setControlState === "function")
                   bot.setControlState("sneak", false);
@@ -1577,7 +1577,7 @@ function initializeModules(bot, mcData, defaultMove) {
     if (config.utils["anti-afk"].sneak) {
       try {
         if (typeof bot.setControlState === "function")
-          bot.setControlState("sneak", false);
+          bot.setControlState("sneak", true);
       } catch (e) {}
     }
   }
